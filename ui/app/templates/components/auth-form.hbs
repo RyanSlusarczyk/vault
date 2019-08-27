@@ -63,6 +63,27 @@
         @selectedAuthIsPath={{this.selectedAuthIsPath}}
       />
     </AuthJwt>
+  {{else if (eq this.selectedAuthBackend.type "saml")}}
+    <AuthSaml
+      @onError={{action "handleError"}}
+      @onLoading={{action (mut this.isLoading)}}
+      @onToken={{action (mut this.token)}}
+      @namespace={{this.namespace}}
+      @onNamespace={{action (mut this.namespace)}}
+      @onSelectedAuth={{action (mut this.selectedAuth)}}
+      @onSubmit={{action "doSubmit"}}
+      @onRoleName={{action (mut this.roleName)}}
+      @roleName={{this.roleName}}
+      @selectedAuthType={{this.selectedAuthBackend.type}}
+      @selectedAuthPath={{or this.customPath this.selectedAuthBackend.id}}
+      @disabled={{authenticate.isRunning}}
+    >
+      <AuthFormOptions
+        @customPath={{this.customPath}}
+        @onPathChange={{action (mut this.customPath)}}
+        @selectedAuthIsPath={{this.selectedAuthIsPath}}
+      />
+    </AuthSaml>
   {{else}}
     <form
       id="auth-form"

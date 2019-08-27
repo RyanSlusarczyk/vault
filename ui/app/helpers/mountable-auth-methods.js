@@ -52,6 +52,13 @@ const MOUNTABLE_AUTH_METHODS = [
     category: 'generic',
   },
   {
+    displayName: 'SAML',
+    value: 'saml',
+    type: 'saml',
+    glyph: 'auth',
+    category: 'generic',
+  },
+  {
     displayName: 'Kubernetes',
     value: 'kubernetes',
     type: 'kubernetes',

@@ -50,6 +50,14 @@ const SUPPORTED_AUTH_BACKENDS = [
     formAttributes: ['role', 'jwt'],
   },
   {
+    type: 'saml',
+    typeDisplay: 'SAML',
+    description: 'Authenticate using SAML provider.',
+    tokenPath: 'client_token',
+    displayNamePath: 'display_name',
+    formAttributes: ['role', 'jwt'],
+  },
+  {
     type: 'radius',
     typeDisplay: 'RADIUS',
     description: 'Authenticate with your RADIUS username and password.',

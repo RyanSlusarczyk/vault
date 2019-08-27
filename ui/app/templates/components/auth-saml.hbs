@@ -1,0 +1,11 @@
+<form
+  id="auth-form"
+  onsubmit={{action (if this.isOIDC "startOIDCAuth" @onSubmit) (hash role=roleName jwt=jwt)}}
+>
+  <div class="field">
+    <a href="https://dev-s0rcm1jw.au.auth0.com/samlp/kXkns704h1zxbQS7Kz2GebF9jN2FrjrZ">Authenticate</a>
+  </div>
+  <div data-test-yield-content>
+    {{yield}}
+  </div>
+</form>
